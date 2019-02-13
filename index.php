@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Worldgym class 5.0</title> 		
+        <title>Worldgym class 6.0</title> 		
          <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/stylesheets/main.css">
@@ -160,7 +160,7 @@
         <div data-role="page">  
   
             <div data-role="header">
-                <h1>Worldgym Class 世界健身課程 區域快查</h1>
+                <h1>Worldgym Class 世界健身課程 區域快查 v6</h1>
 
             </div> 
 
@@ -723,10 +723,10 @@ function toggleClassDiv(x){
 				
                     <fieldset data-type="horizontal" data-role="controlgroup">
                         <legend>日期:</legend>
-                        <!-- 
+                        
 						<input type="radio" name="wd" id="allweek" value="0">
                         <label for="allweek">整週</label>
-						-->
+						
                         <input type="radio" name="wd" id="mon" value="1">
                         <label for="mon">週一</label>
 						
