@@ -1,21 +1,11 @@
 <?php
-//防止执行超时
-set_time_limit(0);
-//清空并关闭输出缓存
-ob_end_clean();
-//需要循环的数据
-for($i = 0; $i < 188; $i++)
-{
-  $users[] = '課程' . $i;
-}
-//计算数据的长度
-$total = 100;
-//显示的进度条长度，单位 px 
-$width = 100;
-//每条记录的操作所占的进度条单位长度
-//$pix = $width / $total;
-//默认开始的进度条百分比
-//$progress = 0;
+
+ini_set('memory_limit', '256M');
+
+//ini_set('display_errors',1);
+//ini_set('display_startup_errors',1);
+//error_reporting(-1);
+
 ?>
 
 <html>
@@ -29,18 +19,6 @@ $width = 100;
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
-        
-
-<script language="JavaScript">
- <!-- 
- function updateProgress(sMsg) 
- { 
-  document.getElementById("status").innerHTML = sMsg; 
-  //document.getElementById("progress").style.width = iWidth + "px"; 
-  //document.getElementById("percent").innerHTML = parseInt(iWidth / <?php echo $width; ?> * 100) + "%"; 
-  } 
- --> 
- </script>
 
     </head>
 	
@@ -48,25 +26,9 @@ $width = 100;
     <div id="status"></div>
 
   </div> 
- <?php
-flush(); //将输出发送给客户端浏览器 
-foreach($users as $user)
-{
-  ?> 
-<script language="JavaScript"> 
- updateProgress("查詢中...請稍候...<br><br>");
-</script>
+
 <?php
-  flush(); //将输出发送给客户端浏览器，使其可以立即执行服务器端输出的 JavaScript 程序。 
-  //$progress += $pix;
-} //end foreach 
-?> 
-<script language="JavaScript"> 
-  //最后将进度条设置成最大值 $width，同时显示操作完成 
- updateProgress("查詢成功!!"); 
-</script>
-<?php
-flush();
+//flush();
 ?> 
         <div data-role="page">  
           
@@ -94,10 +56,10 @@ $multi_class = $_POST ['clas'];
 $dis_cnt = 0;
 $display_arr;
 $nowoffice_arr;
-//MAX SPOT = 69
-$office_select=array_fill(1,69,0);
+//MAX SPOT = 83
+$office_select=array_fill(1,83,0); //CHANGE ME 
 $wd_select=array_fill(0,7,0);
-$js_office=array_fill(1,69,0);
+$js_office=array_fill(1,83,0); //CHANGE ME 
 if ($week_day)
 $wd_select[$week_day-1] = 1;
 
@@ -180,7 +142,7 @@ foreach ($multi_class as $key => $value) {
 //$office_select[2] = 1;
 //echo 'Current PHP version: ' . phpversion();
 
-if ($class_office == tp)
+if ($class_office == tp) //台北
 {
 $office_select=array_fill(1,9,1);
 $office_select[31] = 1 ;
@@ -192,8 +154,10 @@ $office_select[63] = 1 ;
 $office_select[66] = 1 ;
 $office_select[67] = 1 ;
 $office_select[68] = 1 ;
+$office_select[78] = 1 ;
+$office_select[82] = 1 ;
 }
-else if ($class_office == nt)
+else if ($class_office == nt) //新北
 {
 $office_select=array_fill(10,6,1);
 $office_select[30] = 1 ;
@@ -204,73 +168,85 @@ $office_select[47] = 1 ;
 $office_select[51] = 1 ;
 $office_select[52] = 1 ;
 $office_select[55] = 1 ;
+$office_select[83] = 1 ;
 }
-else if ($class_office == ty)
+else if ($class_office == ty) //桃園
 {
 $office_select[17] = 1 ;
 $office_select[18] = 1 ;
 $office_select[33] = 1 ;
 $office_select[64] = 1 ;
+$office_select[75] = 1 ;
+$office_select[80] = 1 ;
 
 }
-else if ($class_office == hs)
+else if ($class_office == hs) //新竹
 {
 $office_select[20] = 1 ;
 $office_select[21] = 1 ;
 $office_select[38] = 1 ;
 $office_select[49] = 1 ;
 }
-else if ($class_office == tc)
+else if ($class_office == tc) //台中
 {
 $office_select=array_fill(22,2,1);
 $office_select[36] = 1 ;
 $office_select[44] = 1 ;
 $office_select[46] = 1 ;
 $office_select[61] = 1 ;
+$office_select[81] = 1 ;
 }
-else if ($class_office == tn)
+else if ($class_office == tn)//台南
 {
 $office_select=array_fill(25,3,1);
+$office_select[73] = 1 ;
 }
-else if ($class_office == ks)
+else if ($class_office == ks) //高雄
 {
 $office_select=array_fill(34,2,1);
 $office_select[59] = 1 ;
 $office_select[69] = 1 ;
+$office_select[70] = 1 ;
+$office_select[74] = 1 ;
+$office_select[79] = 1 ;
 }
 else if ($class_office == il)
 {
 $office_select=array_fill(42,2,1);
 }
-else if ($class_office == pt)
+else if ($class_office == pt) //屏東
 {
 $office_select[48] = 1 ;
 }
-else if ($class_office == wl)
+else if ($class_office == wl) //花蓮
 {
 $office_select[56] = 1 ;
 }
+else if ($class_office == gl) //基隆
+{
+$office_select[76] = 1 ;
+}
 else if ($class_office == all)
 {
-    $office_select=array_fill(0,39,1);
+    $office_select=array_fill(0,39,1);// not work
 }
 
 
-//MAX SPOT = 69
-$i=69;
+//MAX SPOT = 83
+$i=83; //CHANGE ME 
 
 
 echo '  <form method="post" action="wg_post.php" data-ajax="false"> <div class="parent" style="height:100%;"> <div class="child" style="height:100%;">';
 
 
-if ($week_day == 0)
+if ($week_day == 0) //ALL WEEK
 {
-	
+	$done = 0;
 	for($x=1 ; $x<=7 ; $x++)
 	{	
       //$wd_select=array_fill(0,7,1);
       echo '<h3 align="center">    <legend>+++++'.$dowMap[$x-1].'課表+++++</legend>    </h3> <hr>';
- 
+       $done =0;
        for($j=1 ; $j<=$i ; $j++)
 	   {
            if ($office_select[$j] == 1 )
@@ -279,16 +255,19 @@ if ($week_day == 0)
 	           {    
 			       //echo "s:".date('H:i:s');
 				   //$context = stream_context_create(array('http' => array('"method"=>"GET","timeout"=>1')));
-	               ${"json" . $j.$x} = @curl_get_file_contents('http://52.27.235.58/zh-tw/api/schedule_period/schedule?office_id='.$j.'&month='.$month.'&format=js&callback=?');
-				   //echo "<br>e:".date('H:i:s')."<br>";
-                   ${"office" . $j.$x} = @json_decode(${"json" . $j.$x});  
-                   			   
+	               //${"json" . $j.$x} = file_get_contents('http://52.27.235.58/zh-tw/api/schedule_period/schedule?office_id='.$j.'&month='.$month.'&format=js&callback=?');
+				   if ($done == 0)
+				   {
+				       ${"json" . $j.$x} = file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/../../tmp/json" . $j. ".txt");
+				       ${"office" . $j.$x} = @json_decode(${"json" . $j.$x});  
+                   }			   
 	               //$js_office[$j] = 1;
 		           @getClass(${"office" . $j.$x}, $j, $x);
 				   
 	           }
             }
         }
+		$done = 1;
         ksort($display_arr);
         $xx= 0;
 	    foreach ($display_arr as $value) 
@@ -317,7 +296,8 @@ else
 	           {    
 			       //echo "s:".date('H:i:s');
 				   //$context = stream_context_create(array('http' => array('"method"=>"GET","timeout"=>1')));
-	               ${"json" . $j} = @curl_get_file_contents('http://52.27.235.58/zh-tw/api/schedule_period/schedule?office_id='.$j.'&month='.$month.'&format=js&callback=?');
+	               //${"json" . $j} = @curl_get_file_contents('http://52.27.235.58/zh-tw/api/schedule_period/schedule?office_id='.$j.'&month='.$month.'&format=js&callback=?');
+				   ${"json" . $j.$x} = file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/../../tmp/json" . $j. ".txt");
 				   //echo "<br>e:".date('H:i:s')."<br>";
                    ${"office" . $j} = @json_decode(${"json" . $j});  
                    			   
@@ -339,7 +319,7 @@ else
 }
 ?>
 <input type="submit" value="店點公告 (請先選取一間店名)">
-<input type="button" value="重新查詢 (回首頁)" onclick="location.href='wgc.html'">
+<input type="button" value="重新查詢 (回首頁)" onclick="location.href='index.html'">
 
 </div> </div>
 

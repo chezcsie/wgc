@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Worldgym class 6.0</title> 		
+        <title>WorldGym Class</title> 		
          <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/stylesheets/main.css">
@@ -160,7 +160,7 @@
         <div data-role="page">  
   
             <div data-role="header">
-                <h1>Worldgym Class 世界健身課程 區域快查 v6</h1>
+                <h1>WorldGym Class 世界健身課程快查</h1>
 
             </div> 
 
@@ -444,22 +444,23 @@ function toggleClassDiv(x){
                     </fieldset>
 					<div data-role="main" id="info" class="ui-content">  
 					<fieldset data-type="horizontal" data-role="controlgroup" >
-					<input type="button" onclick="toggleDiv(0)" value="區域搜尋">
-					<input type="button" onclick="toggleDiv(1)" value="台北店點">
-					<input type="button" onclick="toggleDiv(9)" value="新北店點">					
-					<input type="button" onclick="toggleDiv(2)" value="桃園店點">
-					<input type="button" onclick="toggleDiv(3)" value="新竹店點">
-					<input type="button" onclick="toggleDiv(4)" value="台中店點">
-					<input type="button" onclick="toggleDiv(5)" value="台南店點">
-					<input type="button" onclick="toggleDiv(6)" value="高雄店點">
-					<input type="button" onclick="toggleDiv(7)" value="屏東店點">			
-					<input type="button" onclick="toggleDiv(8)" value="宜蘭店點">		
-					<input type="button" onclick="toggleDiv(10)" value="花蓮店點">						
+					<input type="button" onclick="toggleDiv(0)" value="整區店點">
+					<input type="button" onclick="toggleDiv(11)" value="基隆單點">
+					<input type="button" onclick="toggleDiv(1)" value="台北單點">
+					<input type="button" onclick="toggleDiv(9)" value="新北單點">					
+					<input type="button" onclick="toggleDiv(2)" value="桃園單點">
+					<input type="button" onclick="toggleDiv(3)" value="新竹單點">
+					<input type="button" onclick="toggleDiv(4)" value="台中單點">
+					<input type="button" onclick="toggleDiv(5)" value="台南單點">
+					<input type="button" onclick="toggleDiv(6)" value="高雄單點">
+					<input type="button" onclick="toggleDiv(7)" value="屏東單點">			
+					<input type="button" onclick="toggleDiv(8)" value="宜蘭單點">		
+					<input type="button" onclick="toggleDiv(10)" value="花蓮單點">						
 					</fieldset>
 					</div>
 					<div data-role="main"  id="sec_1" class="ui-content"  style="display: none">  
                     <fieldset data-type="horizontal" data-role="controlgroup" >
-                        <legend>台北區店點(可複選):</legend>
+                        <legend>台北單點(可複選):</legend>
 						
 						<input type="checkbox" name="clas[]" id="1" value="1">
                         <label for="1">101店</label>
@@ -515,12 +516,18 @@ function toggleClassDiv(x){
                         <input type="checkbox" name="clas[]" id="31" value="31">
                         <label for="31">公館店</label>											
 
+                        <input type="checkbox" name="clas[]" id="78" value="78">
+                        <label for="78">天母德行店</label>		 
+	                    
+						<input type="checkbox" name="clas[]" id="82" value="82">
+                        <label for="82">民權西店EXPRESS</label>		
+						
                     </fieldset>
 					</div> 
 					
 					<div data-role="main"  id="sec_9" class="ui-content"  style="display: none">  
                     <fieldset data-type="horizontal" data-role="controlgroup" >
-                        <legend>新北區店點(可複選):</legend>
+                        <legend>新北區單點(可複選):</legend>
 
                         <input type="checkbox" name="clas[]" id="10" value="10">
                         <label for="10">新店店</label>	
@@ -566,12 +573,15 @@ function toggleClassDiv(x){
 						
                         <input type="checkbox" name="clas[]" id="16" value="16">
                         <label for="16">林口店</label>	
+						
+                        <input type="checkbox" name="clas[]" id="83" value="83">
+                        <label for="83">泰山店EXPRESS</label>	
                     </fieldset>
 					</div> 
 					
                     <div data-role="main"  id="sec_2" class="ui-content"  style="display: none">  
                     <fieldset data-type="horizontal" data-role="controlgroup" >
-                        <legend>桃園區店點(可複選):</legend>
+                        <legend>桃園單點(可複選):</legend>
 						<input type="checkbox" name="clas[]" id="64" value="64">
                         <label for="64">國強店</label>
 						
@@ -583,13 +593,18 @@ function toggleClassDiv(x){
 						
                         <input type="checkbox" name="clas[]" id="17" value="17">
                         <label for="17">中壢店</label>
-					
+
+                        <input type="checkbox" name="clas[]" id="75" value="75">
+                        <label for="75">內壢店SPORT</label>		
+						
+                        <input type="checkbox" name="clas[]" id="80" value="80">
+                        <label for="80">南崁店EXPRESS	</label>							
                     </fieldset>
 					</div> 			
 					
                     <div data-role="main"  id="sec_3" class="ui-content"  style="display: none">  
                     <fieldset data-type="horizontal" data-role="controlgroup" >
-                        <legend>新竹區店點(可複選):</legend>
+                        <legend>新竹單點(可複選):</legend>
 						<input type="checkbox" name="clas[]" id="38" value="38">
                         <label for="38">中正店</label>
 						
@@ -597,16 +612,16 @@ function toggleClassDiv(x){
                         <label for="20">林森店</label>
 						
                         <input type="checkbox" name="clas[]" id="21" value="21">
-                        <label for="21">巨城店</label>
+                        <label for="21">巨城店SPORT</label>
 							
                         <input type="checkbox" name="clas[]" id="49" value="49">
-                        <label for="49">竹北店</label>					
+                        <label for="49">竹北店SPORT</label>					
                     </fieldset>
 					</div> 				
 
                     <div data-role="main"  id="sec_4" class="ui-content"  style="display: none">  
                     <fieldset data-type="horizontal" data-role="controlgroup" >
-                        <legend>台中區店點(可複選):</legend>
+                        <legend>台中單點(可複選):</legend>
 						<input type="checkbox" name="clas[]" id="22" value="22">
                         <label for="22">一中店</label>
 						
@@ -623,13 +638,16 @@ function toggleClassDiv(x){
                         <label for="61">黎明店</label>	
 						
                         <input type="checkbox" name="clas[]" id="44" value="44">		
-                        <label for="44">西屯店</label>							
+                        <label for="44">西屯店</label>	
+
+                        <input type="checkbox" name="clas[]" id="81" value="81">		
+                        <label for="81">公益店</label>							
                     </fieldset>
 					</div> 		
 					
                     <div data-role="main"  id="sec_5" class="ui-content"  style="display: none">  
                     <fieldset data-type="horizontal" data-role="controlgroup" >
-                        <legend>台南區店點(可複選):</legend>
+                        <legend>台南單點(可複選):</legend>
 						<input type="checkbox" name="clas[]" id="25" value="25">
                         <label for="25">FOCUS店</label>
 						
@@ -638,12 +656,15 @@ function toggleClassDiv(x){
 						
                         <input type="checkbox" name="clas[]" id="27" value="27">
                         <label for="27">長榮店</label>
+						
+                        <input type="checkbox" name="clas[]" id="73" value="73">
+                        <label for="73">永康店SPORT</label>						
                     </fieldset>
 					</div> 			
 					
                     <div data-role="main"  id="sec_6" class="ui-content"  style="display: none">  
                     <fieldset data-type="horizontal" data-role="controlgroup" >
-                        <legend>高雄區店點(可複選):</legend>
+                        <legend>高雄單點(可複選):</legend>
 						<input type="checkbox" name="clas[]" id="35" value="35">
                         <label for="35">SOGO店</label>
 						
@@ -655,19 +676,28 @@ function toggleClassDiv(x){
 						
                         <input type="checkbox" name="clas[]" id="69" value="69">
                         <label for="69">岡山店</label>
+						
+                        <input type="checkbox" name="clas[]" id="74" value="74">
+                        <label for="74">鳳山店</label>
+						
+                        <input type="checkbox" name="clas[]" id="70" value="70">
+                        <label for="70">楠梓店EXPRESS</label>
+						
+                        <input type="checkbox" name="clas[]" id="79" value="79">
+                        <label for="79">大統和平店</label>						
                     </fieldset>
 					</div> 	
 
                     <div data-role="main"  id="sec_7" class="ui-content"  style="display: none">  
                     <fieldset data-type="horizontal" data-role="controlgroup" >
-                        <legend>屏東區店點(可複選):</legend>
+                        <legend>屏東單點(可複選):</legend>
 						<input type="checkbox" name="clas[]" id="48" value="48">
                         <label for="48">自由店</label>
                     </fieldset>
 					</div> 	
                     <div data-role="main"  id="sec_8" class="ui-content"  style="display: none">  
                     <fieldset data-type="horizontal" data-role="controlgroup" >
-                        <legend>宜蘭區店點(可複選):</legend>
+                        <legend>宜蘭單點(可複選):</legend>
 						<input type="checkbox" name="clas[]" id="42" value="42">
                         <label for="42">友愛店</label>
 						
@@ -678,46 +708,59 @@ function toggleClassDiv(x){
 					
                     <div data-role="main"  id="sec_10" class="ui-content"  style="display: none">  
                     <fieldset data-type="horizontal" data-role="controlgroup" >
-                        <legend>花蓮區店點(可複選):</legend>
+                        <legend>花蓮單點(可複選):</legend>
 						<input type="checkbox" name="clas[]" id="56" value="56">
                         <label for="56">國聯店</label>
                     </fieldset>
 					</div> 	
+					
+                   <div data-role="main"  id="sec_11" class="ui-content"  style="display: none">  
+                    <fieldset data-type="horizontal" data-role="controlgroup" >
+                        <legend>基隆單點(可複選):</legend>
+						<input type="checkbox" name="clas[]" id="76" value="76">
+                        <label for="76">信義店SPORT</label>
+                    </fieldset>
+					</div> 	
+					
 					<div data-role="main"  id="sec_0" class="ui-content"  style="display:"> 
                     <fieldset data-type="horizontal" data-role="controlgroup" >
-                        <legend>區域搜尋:</legend>
+                        <legend>整區店點搜尋:</legend>
+						<!--
 						<input type="radio" name="of" id="all" value="all">
                         <label for="all">全台</label>
-						
+						-->
                         <input type="radio" name="of" id="tp" value="tp">
-                        <label for="tp">台北區</label>
+                        <label for="tp">台北全區</label>
 						
                         <input type="radio" name="of" id="nt" value="nt">
-                        <label for="nt">新北區</label>
+                        <label for="nt">新北全區</label>
+
+                        <input type="radio" name="of" id="gl" value="gl">
+                        <label for="gl">基隆全區</label>
 						
                         <input type="radio" name="of" id="il" value="il">
-                        <label for="il">宜蘭區</label>						
+                        <label for="il">宜蘭全區</label>						
                         
 						<input type="radio" name="of" id="ty" value="ty">
-                        <label for="ty">桃園區</label>
+                        <label for="ty">桃園全區</label>
 						
                         <input type="radio" name="of" id="hs" value="hs">
-                        <label for="hs">新竹區</label>
+                        <label for="hs">新竹全區</label>
 						
                         <input type="radio" name="of" id="tc" value="tc">
-                        <label for="tc">台中區</label>
+                        <label for="tc">台中全區</label>
 						
                         <input type="radio" name="of" id="tn" value="tn">
-                        <label for="tn">台南區</label>
+                        <label for="tn">台南全區</label>
 						
                         <input type="radio" name="of" id="ks" value="ks">
-                        <label for="ks">高雄區</label>	
+                        <label for="ks">高雄全區</label>	
 						
 						<input type="radio" name="of" id="pt" value="pt">
-                        <label for="pt">屏東區</label>
+                        <label for="pt">屏東全區</label>
 						
 						<input type="radio" name="of" id="wl" value="wl">
-                        <label for="wl">花蓮區</label>								
+                        <label for="wl">花蓮全區</label>								
                     </fieldset>
 					</div>
 				
@@ -778,15 +821,20 @@ deployRadioEvent();
 </script> 
 
 <input type="submit" value="查詢課表">
-
+<input type="reset" value="清除查詢">
+<?php
+$update = file_get_contents("/tmp/update.txt");
+echo "課表更新時間:" . $update; 
+?>
                     
                
                 </form>
             </div>
           
             <div data-role="footer">
-		<p><span style="color: #333333;">如有任何問題請聯絡我</span></p>
+		<p><span style="color: #333333;">如有任何問題BUG請聯絡我</span></p>
 		<a href="https://www.facebook.com/cha.micro" class="fa fa-facebook"></a>
+		<a >V6版本 - 查詢速度提升90% | 各區店點更新 | 開放整週查詢功能 </a>
             </div>
         </div>
        
